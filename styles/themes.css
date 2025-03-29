@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light Theme (默认主题) */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+
+  /* 卡片样式 */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  /* 弹出层样式 */
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  /* 主要和次要颜色 */
+  --primary: 142 76% 36%; /* 绿色主题 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 217 91% 60%; /* 蓝色主题 */
+  --secondary-foreground: 0 0% 98%;
+
+  /* 文本和边框 */
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 142 76% 36%;
+
+  /* 其他UI元素 */
+  --radius: 0.5rem;
+}
+
+/* Dark Theme - 更柔和的深色主题而非纯黑 */
+.dark {
+  --background: 222 47% 11%; /* 深蓝灰色背景替代纯黑 */
+  --foreground: 210 40% 98%;
+
+  /* 卡片样式 */
+  --card: 222 47% 8%; /* 比背景稍暗 */
+  --card-foreground: 210 40% 98%;
+
+  /* 弹出层样式 */
+  --popover: 222 47% 8%;
+  --popover-foreground: 210 40% 98%;
+
+  /* 主要和次要颜色 */
+  --primary: 142 70% 36%; /* 调暗绿色使其在暗色主题中更舒适 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 217 91% 60%; /* 保持蓝色主题 */
+  --secondary-foreground: 0 0% 98%;
+
+  /* 文本和边框 */
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 142 70% 36%;
+}
+
+/* 黑色主题 - 可选，用户可以通过按钮切换 */
+.black {
+  --background: 0 0% 0%; /* 纯黑背景 */
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 142 76% 36%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 217 91% 60%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 142 76% 36%;
+}
+
+/* 增强卡片暗色模式下的可见性 */
+.dark .card,
+.black .card {
+  @apply bg-card text-card-foreground border-border shadow-md;
+}
+
+/* 改善暗色模式下的渐变背景 */
+.dark .bg-gradient-to-r,
+.black .bg-gradient-to-r {
+  @apply from-emerald-900/40 to-blue-900/40;
+}
+
+/* 统一按钮样式 */
+.button-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+
+.button-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90;
+}
+
+/* 暗色模式下卡片悬停效果增强 */
+.dark .hover\:shadow-lg:hover,
+.black .hover\:shadow-lg:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 255, 179, 0.05), 0 4px 6px -2px rgba(0, 255, 179, 0.025);
+}
+
+/* 在较暗背景上的文本增强 */
+.dark .text-slate-600,
+.black .text-slate-600 {
+  @apply text-slate-300;
+}
+
+.dark .text-slate-500,
+.black .text-slate-500 {
+  @apply text-slate-400;
+}
+
+/* 动画过渡效果 */
+*,
+*::before,
+*::after {
+  @apply transition-colors duration-200;
+}
+
+/* 更好的表单元素暗色适配 */
+.dark .input,
+.dark .textarea,
+.black .input,
+.black .textarea {
+  @apply bg-card border-border;
+}
+
+/* 强调背景的卡片 */
+.dark .bg-slate-50,
+.black .bg-slate-50 {
+  @apply bg-card/60;
+}
+
+/* 强调色图标背景 */
+.dark .bg-white,
+.black .bg-white {
+  @apply bg-background/10 text-foreground;
+}
+
