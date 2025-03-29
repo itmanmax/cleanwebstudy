@@ -16,7 +16,7 @@ import { useTheme } from 'next-themes';
 export function ShareButton() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const shareUrl = `web2025.maxtral.fun${pathname === '/' ? '' : pathname}`;
+  const shareUrl = `https://web2025.maxtral.fun${pathname}`;
   const { theme, setTheme } = useTheme();
 
   return (
