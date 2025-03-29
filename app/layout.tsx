@@ -6,6 +6,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: '清朗学风，学润德馨',
   description: '积极响应国家对于教育创新、人才培养以及文化建设的号召',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({

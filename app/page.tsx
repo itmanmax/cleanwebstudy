@@ -244,6 +244,8 @@ export default function Home() {
                 <br />
                 电话：123-456-7890
                 <br />
+                小组：不爱吃香菜
+                <br />
                 邮箱：ahnu@university.edu.cn
               </p>
             </div>
